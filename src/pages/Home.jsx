@@ -52,11 +52,12 @@ const Home = () => {
     })
 
   return (
-    <div className='w-full bg-[#EDE5D8]'>
-        <div className='grid grid-cols-2 p-4 m-auto gap-10'>
+    <div className='w-full h-full bg-[#EDE5D8]'>
+        <div className='grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 auto-rows-fr p-4 m-auto gap-10'>
             {renderCharacters}
         </div>
         <Pagination totalPosts={data.length} postsPerPage={12} setCurrentPage={setCurrentPage}/>
+
     </div>
   )
 }

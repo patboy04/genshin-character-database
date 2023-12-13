@@ -8,13 +8,25 @@ const Pagination = (props) => {
     }
   return (
     <div>
-        <div>
+        <div className='flex gap-5 sm:gap-5 p-10 justify-center'>
             {pages.map((page, index) => {
-                return <button key={index} onClick={() => {
-                    props.setCurrentPage(page);
-                    window.scrollTo(0, 0);
-                }}>
-                {page}</button>
+                return (
+                    <div className='w-[40px] h-[40px] lg:w-[45px] lg:h[45px] bg-[#989DA2] text-white rounded-xl flex justify-center'>
+                        <button 
+                            key={index}
+                            onClick={() => {
+                                props.setCurrentPage(page);
+                                window.scrollTo({
+                                    top: 0,
+                                    left: 0,
+                                    behavior: "smooth",
+                                });
+                            }}>
+                                {page}
+                            </button>
+                    </div>
+                )
+                
             })}
         </div>
     </div>
