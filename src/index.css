@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Poppins:ital,wght@0,500;0,700;1,900&display=swap');
+
+@layer base {
+    body {
+        @apply font-['Poppins'];
+    }
+}
+
+@layer components {
+    .disable-blur{
+        image-rendering: -webkit-optimize-contrast;
+    }
+}
