@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useLoaderData } from 'react-router-dom'
+import Pagination from '../components/Pagination'
 
 export const loader = async() => {
     const res = await fetch('https://api.genshin.dev/characters')
@@ -10,10 +11,15 @@ export const loader = async() => {
     return data
 }
 const Home = () => {
-
+    const [currentPage, setCurrentPage] = useState(1)
     const data = useLoaderData()
+    
+    //pagination logic
+    const finalIndex = currentPage * 12;
+    const initalIndex = finalIndex - 12;
+    const characters = data.slice(initalIndex, finalIndex)
 
-    const renderCharacters = data.map(character => {
+    const renderCharacters = characters.map(character => {
         //string manipulations for chars with hyphen
         let modChar = character.replace("-", "_")
         //string manipulations for chars with lastname, firstname convention
@@ -50,6 +56,7 @@ const Home = () => {
         <div className='grid grid-cols-2 p-4 m-auto gap-10'>
             {renderCharacters}
         </div>
+        <Pagination totalPosts={data.length} postsPerPage={12} setCurrentPage={setCurrentPage}/>
     </div>
   )
 }
