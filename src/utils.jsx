@@ -1,10 +1,12 @@
+import React from "react";
+
 export const modifyString = (name) => {
     let modifiedCharacterName = name.replace("-", "_")
-    modifiedCharacterName = modifyInazumanName(modifiedCharacterName)
+    modifiedCharacterName = modifyLongName(modifiedCharacterName)
     return modifiedCharacterName;
 }
 
-export const modifyInazumanName = (name) => {
+export const modifyLongName = (name) => {
     switch(name.toLowerCase()) {
         case 'ayaka':
         case 'kamisato ayaka':
@@ -30,6 +32,10 @@ export const modifyInazumanName = (name) => {
         case 'kujou sara':
             name = "kujou_sara";
             break;
+        case 'itto':
+        case 'arataki itto':
+            name = "arataki_itto"
+            break;
         case 'kuki':
         case 'shinobu':
         case 'kuki shinobu':
@@ -39,9 +45,14 @@ export const modifyInazumanName = (name) => {
         case 'shikanoin heizou':
             name = "shikanoin_heizou";
             break;
+        case 'hutao':
+        case 'hu tao':
+            name = "hu_tao"
+            break;
         case 'traveler':
             name = "traveler_anemo"
             break;
     }
     return name
 }
+
