@@ -1,7 +1,7 @@
 import React from 'react'
-import { getCharacter } from '../api';
 import { useLoaderData } from 'react-router-dom';
 import { colorStyle, modifyLongName, nationImage } from '../utils';
+import { getCharacter } from '../api';
 
 export const loader = async({ request }) => {
   const url = new URL(request.url);

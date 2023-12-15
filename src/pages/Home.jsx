@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useLoaderData, Link } from 'react-router-dom'
+import { useLoaderData, Link, useSearchParams } from 'react-router-dom'
 import Pagination from '../components/Pagination'
 import { getCharacters } from '../api'
 import { modifyString } from '../utils'
@@ -9,11 +9,13 @@ export const loader = async() => {
     return characters
 }
 const Home = () => {
-    const [currentPage, setCurrentPage] = useState(1)
-    const data = useLoaderData()
-    
+    const [currentPage, setCurrentPage] = useState(1);
+    const data = useLoaderData();
+    const [searchParams, setSearchParams] = useSearchParams();
+    const pageFilter = searchParams.get("pageNumber");
+
     //pagination logic
-    const finalIndex = currentPage * 12;
+    const finalIndex = pageFilter ? pageFilter * 12 : currentPage * 12;
     const initalIndex = finalIndex - 12;
     const characters = data.slice(initalIndex, finalIndex)
 

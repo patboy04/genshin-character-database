@@ -1,6 +1,8 @@
 import React from 'react'
+import { useSearchParams } from 'react-router-dom';
 
 const Pagination = (props) => {
+    const [searchParams, setSearchParams] = useSearchParams()
     let pages = [];
 
     for(let i = 1; i < Math.ceil(props.totalPosts/props.postsPerPage); i++) {
@@ -22,6 +24,7 @@ const Pagination = (props) => {
                                     left: 0,
                                     behavior: "smooth",
                                 });
+                                setSearchParams({pageNumber: page})
                             }}>
                             {page}
                         </button>
