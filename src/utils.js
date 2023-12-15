@@ -1,4 +1,9 @@
-import React from "react";
+import inazumaBg from "./assets/inazuma.png"
+import monsdtadtBg from "./assets/monstdadt.png"
+import liyueBg from "./assets/liyue.png"
+import sumeruBg from "./assets/sumeru.png"
+import snezhnayaBg from "./assets/snezhnaya.png"
+import defaultBg from "./assets/default.png"
 
 export const modifyString = (name) => {
     let modifiedCharacterName = name.replace("-", "_")
@@ -55,4 +60,36 @@ export const modifyLongName = (name) => {
     }
     return name
 }
+
+export const colorStyle = (characterNation) => {
+    return characterNation == "mondstadt" 
+    ? "#3DEDC9" 
+    : characterNation == "liyue" 
+    ? "#E7C476"
+    : characterNation == "inazuma" 
+    ? "#9579C1"
+    : characterNation == "sumeru" 
+    ? "#AFE546" 
+    : characterNation == "fontaine" 
+    ? "#0191D3" 
+    : characterNation == "natlan" 
+    ? "#F6BF1D"
+    : characterNation == "snezhnaya" 
+    ? "#E1F7F7"
+    : ""
+} 
+
+export const nationImage = (characterNation) => {
+    return characterNation == "mondstadt" 
+    ? `url(${monsdtadtBg})` 
+    : characterNation == "liyue" 
+    ? `url(${liyueBg})` 
+    : characterNation == "inazuma" 
+    ? `url(${inazumaBg})`
+    : characterNation == "sumeru" 
+    ? `url(${sumeruBg})` 
+    : characterNation == "snezhnaya"
+    ? `url(${snezhnayaBg})`
+    : `url(${defaultBg})`  
+} 
 
