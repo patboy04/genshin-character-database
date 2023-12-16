@@ -1,12 +1,12 @@
 import React from 'react'
 import { useLoaderData } from 'react-router-dom';
 import { colorStyle, modifyLongName, nationImage } from '../utils';
-import { getCharacter } from '../api';
+import { getData } from '../api';
 
 export const loader = async({ request }) => {
   const url = new URL(request.url);
   const specificCharacter = url.searchParams.get("character");
-  const character = getCharacter(specificCharacter);
+  const character = getData("characters", specificCharacter);
   return character;
 }
 

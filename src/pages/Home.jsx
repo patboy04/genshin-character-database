@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import { useLoaderData, Link, useSearchParams } from 'react-router-dom'
 import Pagination from '../components/Pagination'
-import { getCharacters } from '../api'
+import { getData } from '../api'
 import { modifyString } from '../utils'
 
 export const loader = async() => {
-    const characters = getCharacters();
+    const characters = getData("characters");
     return characters
 }
 const Home = () => {

@@ -1,16 +1,8 @@
-export const getCharacters = async() => {
-    const res = await fetch('https://api.genshin.dev/characters')
+export const getData = async(type, value) => {
+    const url = value ? `https://api.genshin.dev/${type}/${value}` : `https://api.genshin.dev/${type}`
+    const res = await fetch(url)
     if(!res.ok) {
-        throw new Error(("Failed to load characters"))
-    }
-    const data = await res.json()
-    return data
-}
-
-export const getCharacter = async(character) => {
-    const res = await fetch(`https://api.genshin.dev/characters/${character}`)
-    if(!res.ok) {
-        throw new Error(("Failed to load character"))
+        throw new Error(`Failed to load ${type}`)
     }
     const data = await res.json()
     return data
