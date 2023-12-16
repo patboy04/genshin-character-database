@@ -33,7 +33,6 @@ const Home = () => {
 
   return (
     <div className='w-full h-full bg-[#EDE5D8]'>
-        <h1 className='text-3xl sm:text-4xl xl:text-5xl  text-center text-[#4B5366] p-4 md:p-8'>Characters</h1>
         <div className='grid grid-cols-3 sm:grid-cols-4 xl:grid-cols-6 auto-rows-fr p-4 md:p-8 xl:px-14 m-auto gap-10'>
             {renderCharacters}
         </div>
