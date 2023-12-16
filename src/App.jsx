@@ -3,16 +3,21 @@ import { RouterProvider, createBrowserRouter, createRoutesFromElements, Route} f
 import Layout from "./components/Layout.jsx"
 import Navbar from './components/Navbar.jsx'
 import Home, { loader as homeLoader }from "./pages/Home.jsx"
-import Character, { loader as characterLoader } from "./pages/Character.jsx"
+import Artifact from './pages/Artifact.jsx'
+import Weapon from './pages/Weapon.jsx'
+import CharacterDetails, { loader as characterLoader } from "./pages/CharacterDetails.jsx"
 import Error from "./pages/Error.jsx"
+
 
 const App = () => {
     const router = createBrowserRouter(createRoutesFromElements(
         <Route path='/' element={<Layout />}>
           <Route path='' element={<Navbar/>}>
             <Route index element={<Home />} loader={homeLoader}/>
+            <Route path='artifacts' element={<Artifact />}/>
+            <Route path='weapons' element={<Weapon />}/>
           </Route>
-          <Route path='character' element={<Character />} loader={characterLoader}/>
+          <Route path='character' element={<CharacterDetails />} loader={characterLoader}/>
         </Route>
     ))
 

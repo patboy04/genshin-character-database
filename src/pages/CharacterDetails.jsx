@@ -10,7 +10,7 @@ export const loader = async({ request }) => {
   return character;
 }
 
-const Character = () => {
+const CharacterDetails = () => {
   //character data from fetch request on loader
   const character = useLoaderData();
   //modify the name to fit the convention I used if(lastName_firstName)
@@ -84,4 +84,4 @@ const Character = () => {
   )
 }
 
-export default Character
+export default CharacterDetails
