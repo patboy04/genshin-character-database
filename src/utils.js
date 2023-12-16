@@ -6,7 +6,7 @@ import snezhnayaBg from "./assets/snezhnaya.png"
 import defaultBg from "./assets/default.png"
 
 export const modifyString = (name) => {
-    let modifiedCharacterName = name.replace("-", "_")
+    let modifiedCharacterName = name.replace(/-/g, "_")
     modifiedCharacterName = modifyLongName(modifiedCharacterName)
     return modifiedCharacterName;
 }
@@ -60,6 +60,29 @@ export const modifyLongName = (name) => {
     }
     return name
 }
+
+export const modifyArtifactName = (artifact) => {
+    const list = [
+        ["defenders_will", "defender_s_will"],
+        ["defenders_will", "glacier_and_snowfield"],
+        ["gladiators_finale", "gladiator_s_finale"],
+        ["ocean-hued_clam", "ocean_hued_clam"],
+        ["defenders_will", "prayers_for_destiny"],
+        ["defenders_will", "prayers_to_springtime"],
+        ["defenders_will", "prayers_for_illumination"],
+        ["defenders_will", "prayers_for_wisdom"],
+        ["shimenawas_reminiscence", "shimenawa_s_reminiscence"],
+        ["defenders_will", "prayers_to_the_firmament"],
+    ];
+
+    for(let i = 0; i < list.length; i++){
+        artifact = artifact.replace(list[i][1], list[i][0]);
+    }
+
+    return artifact;
+}
+
+
 
 export const colorStyle = (characterNation) => {
     return characterNation == "mondstadt" 

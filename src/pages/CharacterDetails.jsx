@@ -30,7 +30,7 @@ const CharacterDetails = () => {
     <div className='w-full h-full bg-[#EDE5D8] p-10 flex flex-col lg:flex-row'>
       <img 
         src={`https://paimon.moe/images/characters/full/${modifiedName.toLowerCase()}.png`}
-        className='absoulute w-full m-3 lg:w-[40vw] object-cover'
+        className='w-full m-3 lg:w-[40vw] object-cover'
       />
       <div className='flex flex-col bg-white rounded-2xl drop-shadow-2xl p-3 md:p-5 hover:scale-105 duration-200'>
         <div className='flex justify-between p-2 my-2 rounded-lg' style={nationStyleBg}>

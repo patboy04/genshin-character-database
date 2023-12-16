@@ -3,7 +3,7 @@ import { NavLink, Outlet } from 'react-router-dom'
 
 const Navbar = () => {
     const activeLink = {
-        fontSize: "2.2rem",
+        textDecoration: "underline",
         pointerEvents: "none",
         cursor: "pointer"
     }
@@ -11,13 +11,13 @@ const Navbar = () => {
   return (
     <div className='w-full h-full bg-[#EDE5D8]'>
         <div className='flex justify-center items-end p-4 md:p-8 gap-8'>
-            <NavLink to='artifacts' className='text-lg sm:text-xl xl:text-2xl text-center text-[#4B5366] hover:scale-110 duration-300' style={({isActive})=> isActive ? activeLink : null}>
+            <NavLink to='artifacts' className='sm:text-lg xl:text-xl text-center text-[#4B5366] hover:scale-110 duration-300' style={({isActive})=> isActive ? activeLink : null}>
                 Artifacts
             </NavLink>
-            <NavLink to='.' className='text-lg sm:text-xl xl:text-2xl text-center text-[#4B5366] hover:scale-110 duration-300' style={({isActive})=> isActive ? activeLink : null} end>
+            <NavLink to='.' className='sm:text-lg xl:text-xl text-center text-[#4B5366] hover:scale-110 duration-300' style={({isActive})=> isActive ? activeLink : null} end>
                 Characters
             </NavLink>
-            <NavLink to='weapons'  className='text-lg sm:text-xl xl:text-2xl text-center text-[#4B5366] hover:scale-110 duration-300'style={({isActive})=> isActive ? activeLink : null}>
+            <NavLink to='weapons'  className='sm:text-lg xl:text-xl text-center text-[#4B5366] hover:scale-110 duration-300'style={({isActive})=> isActive ? activeLink : null}>
                 Weapons
             </NavLink>
         </div>
