@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useSearchParams } from 'react-router-dom';
 
 const Pagination = (props) => {
@@ -11,10 +11,10 @@ const Pagination = (props) => {
 
   return (
     <div>
-        <div className='flex gap-5 sm:gap-5 pb-5 sm:pb-10 lg:pb-10 justify-center'>
+        <div className='flex gap-5 mx-5 pt-2 sm:gap-5 pb-5 sm:pb-10 lg:pb-10 md:justify-center overflow-x-auto'>
             {pages.map((page, index) => {
                 return (
-                    <div key={index} className='w-[40px] h-[40px] lg:w-[45px] lg:h[45px] bg-[#989DA2] text-white rounded-xl flex justify-center hover:scale-110 duration-200'>
+                    <div key={index} className='w-[40px] min-w-[40px] h-[40px] min-h-[40px] lg:w-[45px] lg:h[45px] bg-[#989DA2] text-white rounded-xl flex justify-center hover:scale-110 duration-200'>
                         <button 
                             className='w-full h-full'
                             onClick={() => {
