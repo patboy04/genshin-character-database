@@ -62,7 +62,6 @@ export const modifyLongName = (name) => {
 }
 
 export const removeFaultyArtifacts = (artifactDataArray) => {
-    console.log(artifactDataArray)
     let newArtifactArray = artifactDataArray;
     for(let i = artifactDataArray.length; i > 0; i--) {
         let artifact = artifactDataArray[i]; 
@@ -84,6 +83,7 @@ export const modifyArtifactName = (artifact) => {
         ["gladiators_finale", "gladiator_s_finale"],
         ["ocean-hued_clam", "ocean_hued_clam"],
         ["shimenawas_reminiscence", "shimenawa_s_reminiscence"],
+        ["wanderers_troupe", "wanderer_s_troupe"],
     ];
 
     for(let i = 0; i < list.length; i++){
