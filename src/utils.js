@@ -61,18 +61,29 @@ export const modifyLongName = (name) => {
     return name
 }
 
+export const removeFaultyArtifacts = (artifactDataArray) => {
+    console.log(artifactDataArray)
+    let newArtifactArray = artifactDataArray;
+    for(let i = artifactDataArray.length; i > 0; i--) {
+        let artifact = artifactDataArray[i]; 
+        if(artifact == "glacier-and-snowfield"
+            || artifact == "prayers-for-destiny"
+            || artifact == "prayers-to-springtime"
+            || artifact == "prayers-for-illumination"
+            || artifact == "prayers-for-wisdom"
+            || artifact == "prayers-to-the-firmament" ) {
+                newArtifactArray.splice(i, 1)
+            }
+    };
+    return newArtifactArray;
+};
+
 export const modifyArtifactName = (artifact) => {
     const list = [
         ["defenders_will", "defender_s_will"],
-        ["defenders_will", "glacier_and_snowfield"],
         ["gladiators_finale", "gladiator_s_finale"],
         ["ocean-hued_clam", "ocean_hued_clam"],
-        ["defenders_will", "prayers_for_destiny"],
-        ["defenders_will", "prayers_to_springtime"],
-        ["defenders_will", "prayers_for_illumination"],
-        ["defenders_will", "prayers_for_wisdom"],
         ["shimenawas_reminiscence", "shimenawa_s_reminiscence"],
-        ["defenders_will", "prayers_to_the_firmament"],
     ];
 
     for(let i = 0; i < list.length; i++){

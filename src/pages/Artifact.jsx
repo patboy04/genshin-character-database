@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useLoaderData, useSearchParams, Link } from 'react-router-dom';
 import Pagination from '../components/Pagination';
 import { getData } from '../api'
-import { modifyArtifactName, modifyString } from '../utils';
+import { modifyArtifactName, modifyString, removeFaultyArtifacts } from '../utils';
 
 export const loader = () => {
     const artifacts = getData("artifacts");
@@ -11,7 +11,11 @@ export const loader = () => {
 
 const Artifact = () => {
     const [currentPage, setCurrentPage] = useState(1);
-    const data = useLoaderData();
+
+    const loader = useLoaderData();
+    //remove artifacts that aren't applicable
+    const data = removeFaultyArtifacts(loader)
+
     const [searchParams, setSearchParams] = useSearchParams();
     const pageFilter = searchParams.get("pageNumber");
 
